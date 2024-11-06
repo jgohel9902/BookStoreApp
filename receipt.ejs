@@ -1,0 +1,93 @@
+<!--
+    Jenil Gohel, 8909157
+    Final Exam
+--><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 25px auto;
+            background-color: #ff7d7d;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .error {
+            background-color: #ffe6e6;
+            border: 1px solid #ff8080;
+            color: #ff4d4d;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #350dab;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #3f75b8;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Receipt</h1>
+   
+            <p>Name: <%=receipt.name %>
+            </p>
+            <p>StudentID: <%=receipt.studentID %>
+            </p>
+
+            <h2>Products Bought:</h2>
+            <ul>
+                <%receipt.products.forEach(product=> { %>
+                    <li>
+                        <%= product.name %>: <%= product.quantity %> * $<%=product.price.toFixed(2) %> = $<%=
+                                        (product.quantity * product.price).toFixed(2) %>
+                    </li>
+                    <%}) %>
+            </ul>
+
+            <h2>Total Cost: $<%= receipt.totalCost%>
+            </h2>
+            <h2>Tax: $<%= receipt.tax %>
+            </h2>
+            <h2>Total Cost Including Tax: $<%= receipt.finalTotal %>
+            </h2>
+
+            <a href="/thank-you" class="btn">Confirm Order</a>
+       
+</body>
+
+</html>

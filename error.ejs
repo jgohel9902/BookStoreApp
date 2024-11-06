@@ -1,0 +1,41 @@
+<!--
+    Jenil Gohel, 8909157
+    Final Exam
+--><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error_Page</title>
+    <style>
+        body {
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f0f0f0;
+            margin: 25px auto;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error">
+
+        <h1>You have Error</h1>
+
+        <% for (const error of errors){ %>
+            <%= error.msg %><br />
+                <% } %>
+
+    </div>
+</body>
+
+</html>
